@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html ng-app="projetoPainel">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" type="image/x-icon" href="imagens/fa.ico">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="css/estilo.css">
+        <script type="text/javascript" src="angularJS/angular.js"></script>
+        <script type="text/javascript" src="angularJS/apps.js"></script>
+        <title>Painel2018</title>
+    </head>
+
+
+    <body ng-controller="projetoPainelControle">
+        <div class="container">
+            <div class="jumbotron">
+                <img src="imagens/imagemSantana.jpg">
+                
+                <table class="table table-striped">
+                    <tr ng-repeat="titulo in cabecalho">
+                        <th>Data</th>
+                        <th>Filial</th>
+                        <th>Caixa</th>
+                        <th>Coo</th>
+                        <th>Nfce</th>
+                        <th>Numnfce</th>
+                        <th>Motivo</th>
+                        <th>Autorizacao</th>
+                        <th>Status</th>				
+                    </tr>
+                    <tr ng-repeat="dado in objeto">
+                        <td>{{dado.cpData}}</td>
+                        <td>{{dado.cpFilial}}</td>
+                        <td>{{dado.cpCaixa}}</td>
+                        <td>{{dado.cpCoo}}</td>
+                        <td>{{dado.cpNfce}}</td>
+                        <td>{{dado.cpNumnfce}}</td>
+                        <td>{{dado.cpMotivo}}</td>
+                        <td>{{dado.cpAutorizacao}}</td>
+                        <td>{{dado.status}}</td>				
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+    </body>
+</html>
+

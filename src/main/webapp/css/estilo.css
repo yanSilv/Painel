@@ -1,0 +1,84 @@
+.corpo {
+    background-color: #3385ff;
+}
+
+.table {
+    background-color: #e6fff7;
+}
+
+.sucesso {
+    color: #337ab7;
+}
+
+.pendente {
+    color: #8a6d3b;
+}
+
+.cancelado {
+    color: #d42912;
+}
+
+#logo {
+    padding-top: 10px;
+}
+
+.jumbotron {
+    width: 97%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #ffffff;
+}
+
+.listinline {
+    font-size: 18px;
+    font-family: sans-serif;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.bordazero {
+    padding-top: 1px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+}
+
+
+.list-group {
+    width: 100%;
+    height: 100%;
+    padding-top: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+}
+
+.img-thumbnail {
+    width: 30%;
+}
+
+.validados {
+    color: #3e7e3e;
+    font-weight:bold;
+}
+
+.contigencia {
+    color: #DAA520;
+    font-weight:bold;
+}
+
+.erroxml {
+    color: #d42912;
+    font-weight:bold;
+}

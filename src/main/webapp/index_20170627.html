@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html ng-app="projetoPainel">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Bootstrap core CSS -->
+        <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
+        <link href="css/estilo.css" type="text/css" rel="stylesheet">
+        <link rel="shortcut icon" type="image/x-icon" href="imagens/fa.ico">
+        <script type="text/javascript" src="angularJS/angular.js"></script>
+        <script type="text/javascript" src="angularJS/apps.js"></script>
+        <title>Painel NFC-E 2018</title>
+    </head>
+    <body ng-controller="projetoPainelControle">
+        <div class="container jumbotron">
+            <!--Div do Menu, Necessario Css-->
+            <nav class="navbar navbar-default navbar-fixed-top">
+                <div class="container">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a href="#">Home</a></li>
+                    </ul>
+                </div>
+            </nav>
+
+
+            <div class="row col-xs-12 col-md-12 bordazero">
+                <!--Div da Logo-->
+                <div class="col-xs-12 col-md-4 bordazero">
+                    <img  src="imagens/imagemSantana.jpg">
+                </div>
+
+                <!--Div da Pesquisa-->
+                <div class="col-xs-12 col-md-8 bordazero">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <ul class="list-inline">
+                                <li class="listinline">Pesquisar:</li>
+                                <li class="listinline">
+                                    <label class="btn">
+                                        <input type="checkbox" ng-model="consulta.validos"> <label>Validados</label>  
+                                    </label>
+                                </li>    
+                                <li class="listinline">
+                                    <label class="btn">
+                                        <input type="checkbox" ng-model="consulta.contigencia"> <label> Contingência </label>
+                                    </label>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="list-group-item"><input type="text" class="form-control" placeholder="Data (dd/mm/aaaa)" ng-model="consulta.data"></li>
+                        <li class="list-group-item"><button class="btn btn-primary btn-block" ng-click="solicitaData(consulta)">Solicitar</button></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="row col-xs-12 col-md-4" >
+                    <h2 class="validados">
+                        <img class="img-thumbnail" src="imagens/Ok.png">
+                        {{incrementValidos()}}
+                        
+                    </h2>
+                </div>
+                <div class="row col-xs-12 col-md-4">
+                    <h2 class="contigencia">
+                        <img class="img-thumbnail" src="imagens/Atencao.png">
+                        {{incrementContige()}}
+                    </h2>
+                </div>
+                <div class="row col-xs-12 col-md-4">
+                    <h2 class="erroxml">
+                        <img class="img-thumbnail" src="imagens/Ko.png">
+                        {{qtdErro}}
+                    </h2>
+                </div>
+            </div>
+            
+            <div class="row col-xs-12 col-md-12 bordazero">
+                <table class="table table-striped" ng-init="carregarObjeto(consulta)">
+                    <tr ng-repeat="titulo in cabecalho">
+                        <td>{{titulo.cpData}}</td>
+                        <td>{{titulo.cpFilial}}</td>
+                        <td>{{titulo.cpCaixa}}</td>
+                        <td>{{titulo.cpCoo}}</td>
+                        <td>{{titulo.cpNfce}}</td>
+                        <td>{{titulo.cpNumnfce}}</td>
+                        <td>{{titulo.cpMotivo}}</td>
+                        <td>{{titulo.cpAutorizacao}}</td>
+                        <td>{{titulo.status}}</td>				
+                    </tr>
+                    <tr ng-repeat="dado in objeto">
+                        <td>{{dado.cpData | date: 'dd/MM/yyyy'}}</td>
+                        <td>{{dado.cpFilial}}</td>
+                        <td>{{dado.cpCaixa}}</td>
+                        <td>{{dado.cpCoo}}</td>
+                        <td>{{dado.cpNfce}}</td>
+                        <td>{{dado.cpNumnfce}}</td>
+                        <td>{{dado.cpMotivo}}</td>
+                        <td>{{dado.cpAutorizacao}}</td>
+                        <td>
+                            <div ng-if="dado.status == 1">
+                                <label> Validado</label>
+                            </div>
+                            <div ng-if="dado.status == 0">
+                                <label> Em Contigencia</label>
+                            </div>
+                        </td>				
+                    </tr>
+                </table>
+            </div>
+            <div class="row col-xs-12 col-md-12">
+                <footer> <!-- Aqui e a area do footer -->
+                    <div class="container">
+                        <div class="row">
+                            <div id="linksImportantes" class="col-md-3">Aqui e a area dos links importantes</div> <!-- Aqui e a area dos links importantes -->
+                            <div id="redesSociais" class="col-md-3">Aqui e a area das redes sociais</div> <!-- Aqui e a area das redes sociais -->
+                            <div id="logoFooter" class="col-md-offset-3 col-md-3">Aqui e a area da logo do rodape</div> <!-- Aqui e a area da logo do rodape -->
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </body>
+</html>
